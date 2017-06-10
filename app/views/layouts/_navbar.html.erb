@@ -1,0 +1,46 @@
+
+<head>
+    <style>
+ body {margin:0;}
+
+ .topnav {
+     overflow: hidden;
+     background-color: #333;
+ }
+
+ .topnav a {
+     float: left;
+     display: block;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 17px;
+ }
+
+ .topnav a:hover {
+     background-color: #ddd;
+     color: black;
+ }
+
+ .topnav a.active {
+     background-color: #4CAF50;
+     color: white;
+ }
+         </style>
+     </head>
+
+     <body>
+         <div class="topnav">
+<% if user_signed_in? %>
+    <a> <%= link_to "Home", root_path%></a>
+    <td><%= link_to "Logout", destroy_user_session_path, method: :delete%> </td>
+    <a><%= link_to "New Chatroom", new_chatroom_path %> </a>
+             <% else%>
+                     <a> <%= link_to "Home", root_path%></a>
+                 <td><%= link_to "Login", new_user_session_path %> </td>
+                 <td><%= link_to "Register", new_user_registration_path %> </td>
+             <% end %>
+         </div>
+ 
+     </body>

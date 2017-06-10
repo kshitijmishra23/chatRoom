@@ -1,0 +1,10 @@
+<h1> Available Chatrooms</h1>
+ <%= @chatroom.each do |f| %>
+     <h3> <%= link_to f.topic,  chatroom_path(f)%></h3>
+ </br>
+ <% end %>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
